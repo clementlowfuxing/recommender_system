@@ -1,0 +1,133 @@
+[
+  {
+    "request_id": "REQ-0001",
+    "timestamp": "2026-04-16T08:54:02.217648+00:00",
+    "request": {
+      "required_skills": [
+        "python",
+        "sql"
+      ],
+      "required_competency_level": 3.5,
+      "min_experience": 3,
+      "role_level": "mid",
+      "availability_required": true
+    },
+    "response": {
+      "total_candidates_evaluated": 20,
+      "candidates_after_filtering": 14,
+      "top_k": 5,
+      "recommendations": [
+        {
+          "employee_id": "EMP011",
+          "name": "Karen Singh",
+          "department": "Data",
+          "role_level": "mid",
+          "skills": [
+            "python",
+            "sql",
+            "data_analysis",
+            "machine_learning"
+          ],
+          "competency_score": 3.7,
+          "years_experience": 4,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.96,
+            "experience": 1.0,
+            "role_match": 1.0
+          },
+          "total_score": 0.99
+        },
+        {
+          "employee_id": "EMP006",
+          "name": "Frank Liu",
+          "department": "DevOps",
+          "role_level": "mid",
+          "skills": [
+            "python",
+            "sql",
+            "aws",
+            "docker"
+          ],
+          "competency_score": 3.2,
+          "years_experience": 4,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.9400000000000001,
+            "experience": 1.0,
+            "role_match": 1.0
+          },
+          "total_score": 0.985
+        },
+        {
+          "employee_id": "EMP013",
+          "name": "Maria Garcia",
+          "department": "Data Science",
+          "role_level": "mid",
+          "skills": [
+            "python",
+            "tensorflow",
+            "statistics",
+            "sql"
+          ],
+          "competency_score": 3.9,
+          "years_experience": 5,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.92,
+            "experience": 1.0,
+            "role_match": 1.0
+          },
+          "total_score": 0.98
+        },
+        {
+          "employee_id": "EMP018",
+          "name": "Rachel Zhao",
+          "department": "Data",
+          "role_level": "mid",
+          "skills": [
+            "python",
+            "sql",
+            "tableau",
+            "data_analysis"
+          ],
+          "competency_score": 4.0,
+          "years_experience": 5,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.9,
+            "experience": 1.0,
+            "role_match": 1.0
+          },
+          "total_score": 0.975
+        },
+        {
+          "employee_id": "EMP007",
+          "name": "Grace Okafor",
+          "department": "Engineering",
+          "role_level": "senior",
+          "skills": [
+            "java",
+            "python",
+            "sql",
+            "machine_learning"
+          ],
+          "competency_score": 4.2,
+          "years_experience": 7,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.86,
+            "experience": 1.0,
+            "role_match": 0.5
+          },
+          "total_score": 0.865
+        }
+      ]
+    }
+  }
+]
