@@ -1,0 +1,722 @@
+{
+  "config": {
+    "n_queries": 20,
+    "k": 5,
+    "seed": 42
+  },
+  "aggregated_metrics": {
+    "precision_at_3": {
+      "mean": 0.3167,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "precision_at_5": {
+      "mean": 0.26,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "recall_at_5": {
+      "mean": 0.8852,
+      "min": 0.4167,
+      "max": 1.0
+    },
+    "ndcg_at_5": {
+      "mean": 0.9467,
+      "min": 0.3869,
+      "max": 1.0
+    },
+    "precision_at_3_panel": {
+      "mean": 0.3167,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "precision_at_5_panel": {
+      "mean": 0.26,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "recall_at_5_panel": {
+      "mean": 0.1842,
+      "min": 0.0,
+      "max": 0.625
+    },
+    "ndcg_at_5_panel": {
+      "mean": 0.3058,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "diversity": {
+      "mean": 0.7733,
+      "min": 0.4,
+      "max": 1.0
+    },
+    "fairness": {
+      "mean": 0.8,
+      "min": 0.68,
+      "max": 0.92
+    }
+  },
+  "ranking_stability": {
+    "avg_kendall_tau": 0.988,
+    "interpretation": "1.0 = perfectly stable, 0.0 = random, <0 = inversions"
+  },
+  "per_query_results": [
+    {
+      "query_id": "Q-001",
+      "query": {
+        "query_id": "Q-001",
+        "required_skills": [
+          "python"
+        ],
+        "required_competency_level": 4.2,
+        "min_experience": 3,
+        "role_level": "mid",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP018",
+        "EMP013",
+        "EMP011",
+        "EMP006",
+        "EMP007"
+      ],
+      "total_relevant_oracle": 12,
+      "total_recommended": 5,
+      "precision_at_3": 1.0,
+      "precision_at_5": 1.0,
+      "recall_at_5": 0.4166666666666667,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 1.0,
+      "precision_at_5_panel": 1.0,
+      "recall_at_5_panel": 0.35714285714285715,
+      "ndcg_at_5_panel": 1.0,
+      "diversity": 0.8,
+      "fairness": 0.88
+    },
+    {
+      "query_id": "Q-002",
+      "query": {
+        "query_id": "Q-002",
+        "required_skills": [
+          "kubernetes"
+        ],
+        "required_competency_level": 4.2,
+        "min_experience": 8,
+        "role_level": "junior",
+        "availability_required": false
+      },
+      "ranked_ids": [
+        "EMP010",
+        "EMP002",
+        "EMP012",
+        "EMP001",
+        "EMP009"
+      ],
+      "total_relevant_oracle": 0,
+      "total_recommended": 5,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.0,
+      "precision_at_5_panel": 0.0,
+      "recall_at_5_panel": 0.0,
+      "ndcg_at_5_panel": 0.0,
+      "diversity": 0.6,
+      "fairness": 0.86
+    },
+    {
+      "query_id": "Q-003",
+      "query": {
+        "query_id": "Q-003",
+        "required_skills": [
+          "python"
+        ],
+        "required_competency_level": 2.7,
+        "min_experience": 3,
+        "role_level": "principal",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP019"
+      ],
+      "total_relevant_oracle": 1,
+      "total_recommended": 1,
+      "precision_at_3": 0.3333333333333333,
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.3333333333333333,
+      "precision_at_5_panel": 0.2,
+      "recall_at_5_panel": 0.3333333333333333,
+      "ndcg_at_5_panel": 0.46927872602275644,
+      "diversity": 1.0,
+      "fairness": 0.6799999999999999
+    },
+    {
+      "query_id": "Q-004",
+      "query": {
+        "query_id": "Q-004",
+        "required_skills": [
+          "typescript",
+          "kubernetes"
+        ],
+        "required_competency_level": 4.1,
+        "min_experience": 6,
+        "role_level": "mid",
+        "availability_required": false
+      },
+      "ranked_ids": [
+        "EMP002",
+        "EMP010",
+        "EMP014",
+        "EMP004",
+        "EMP018"
+      ],
+      "total_relevant_oracle": 2,
+      "total_recommended": 5,
+      "precision_at_3": 0.6666666666666666,
+      "precision_at_5": 0.4,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 0.6934264036172708,
+      "precision_at_3_panel": 0.6666666666666666,
+      "precision_at_5_panel": 0.4,
+      "recall_at_5_panel": 0.5,
+      "ndcg_at_5_panel": 0.44149241373678083,
+      "diversity": 0.8,
+      "fairness": 0.88
+    },
+    {
+      "query_id": "Q-005",
+      "query": {
+        "query_id": "Q-005",
+        "required_skills": [
+          "spring",
+          "data_analysis",
+          "python"
+        ],
+        "required_competency_level": 4.2,
+        "min_experience": 2,
+        "role_level": "lead",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP016",
+        "EMP005",
+        "EMP019"
+      ],
+      "total_relevant_oracle": 0,
+      "total_recommended": 3,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.0,
+      "precision_at_5_panel": 0.0,
+      "recall_at_5_panel": 0.0,
+      "ndcg_at_5_panel": 0.0,
+      "diversity": 0.6666666666666666,
+      "fairness": 0.8
+    },
+    {
+      "query_id": "Q-006",
+      "query": {
+        "query_id": "Q-006",
+        "required_skills": [
+          "javascript",
+          "sql",
+          "spring"
+        ],
+        "required_competency_level": 3.3,
+        "min_experience": 1,
+        "role_level": "lead",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP016",
+        "EMP005",
+        "EMP019"
+      ],
+      "total_relevant_oracle": 0,
+      "total_recommended": 3,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.0,
+      "precision_at_5_panel": 0.0,
+      "recall_at_5_panel": 0.0,
+      "ndcg_at_5_panel": 0.0,
+      "diversity": 0.6666666666666666,
+      "fairness": 0.8
+    },
+    {
+      "query_id": "Q-007",
+      "query": {
+        "query_id": "Q-007",
+        "required_skills": [
+          "data_analysis",
+          "docker",
+          "tensorflow"
+        ],
+        "required_competency_level": 3.1,
+        "min_experience": 0,
+        "role_level": "lead",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP016",
+        "EMP005",
+        "EMP019"
+      ],
+      "total_relevant_oracle": 0,
+      "total_recommended": 3,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.0,
+      "precision_at_5_panel": 0.0,
+      "recall_at_5_panel": 0.0,
+      "ndcg_at_5_panel": 0.0,
+      "diversity": 0.6666666666666666,
+      "fairness": 0.8
+    },
+    {
+      "query_id": "Q-008",
+      "query": {
+        "query_id": "Q-008",
+        "required_skills": [
+          "java",
+          "statistics",
+          "machine_learning",
+          "kubernetes"
+        ],
+        "required_competency_level": 3.9,
+        "min_experience": 5,
+        "role_level": "principal",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP019"
+      ],
+      "total_relevant_oracle": 1,
+      "total_recommended": 1,
+      "precision_at_3": 0.3333333333333333,
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.3333333333333333,
+      "precision_at_5_panel": 0.2,
+      "recall_at_5_panel": 0.3333333333333333,
+      "ndcg_at_5_panel": 0.46927872602275644,
+      "diversity": 1.0,
+      "fairness": 0.6799999999999999
+    },
+    {
+      "query_id": "Q-009",
+      "query": {
+        "query_id": "Q-009",
+        "required_skills": [
+          "python"
+        ],
+        "required_competency_level": 4.0,
+        "min_experience": 4,
+        "role_level": "junior",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP018",
+        "EMP013",
+        "EMP007",
+        "EMP011",
+        "EMP001"
+      ],
+      "total_relevant_oracle": 11,
+      "total_recommended": 5,
+      "precision_at_3": 1.0,
+      "precision_at_5": 1.0,
+      "recall_at_5": 0.45454545454545453,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 1.0,
+      "precision_at_5_panel": 1.0,
+      "recall_at_5_panel": 0.38461538461538464,
+      "ndcg_at_5_panel": 1.0,
+      "diversity": 0.6,
+      "fairness": 0.86
+    },
+    {
+      "query_id": "Q-010",
+      "query": {
+        "query_id": "Q-010",
+        "required_skills": [
+          "aws"
+        ],
+        "required_competency_level": 3.1,
+        "min_experience": 5,
+        "role_level": "mid",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP006",
+        "EMP016",
+        "EMP002",
+        "EMP013",
+        "EMP018"
+      ],
+      "total_relevant_oracle": 2,
+      "total_recommended": 5,
+      "precision_at_3": 0.3333333333333333,
+      "precision_at_5": 0.2,
+      "recall_at_5": 0.5,
+      "ndcg_at_5": 0.38685280723454163,
+      "precision_at_3_panel": 0.3333333333333333,
+      "precision_at_5_panel": 0.2,
+      "recall_at_5_panel": 0.25,
+      "ndcg_at_5_panel": 0.24630238874073,
+      "diversity": 0.8,
+      "fairness": 0.9199999999999999
+    },
+    {
+      "query_id": "Q-011",
+      "query": {
+        "query_id": "Q-011",
+        "required_skills": [
+          "sql",
+          "kubernetes",
+          "machine_learning"
+        ],
+        "required_competency_level": 4.1,
+        "min_experience": 1,
+        "role_level": "principal",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP019"
+      ],
+      "total_relevant_oracle": 0,
+      "total_recommended": 1,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.0,
+      "precision_at_5_panel": 0.0,
+      "recall_at_5_panel": 0.0,
+      "ndcg_at_5_panel": 0.0,
+      "diversity": 1.0,
+      "fairness": 0.6799999999999999
+    },
+    {
+      "query_id": "Q-012",
+      "query": {
+        "query_id": "Q-012",
+        "required_skills": [
+          "javascript",
+          "react"
+        ],
+        "required_competency_level": 3.4,
+        "min_experience": 8,
+        "role_level": "mid",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP004",
+        "EMP014",
+        "EMP002",
+        "EMP013",
+        "EMP018"
+      ],
+      "total_relevant_oracle": 0,
+      "total_recommended": 5,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.0,
+      "precision_at_5_panel": 0.0,
+      "recall_at_5_panel": 0.0,
+      "ndcg_at_5_panel": 0.0,
+      "diversity": 0.8,
+      "fairness": 0.9
+    },
+    {
+      "query_id": "Q-013",
+      "query": {
+        "query_id": "Q-013",
+        "required_skills": [
+          "sql"
+        ],
+        "required_competency_level": 4.4,
+        "min_experience": 5,
+        "role_level": "lead",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP016",
+        "EMP005",
+        "EMP019"
+      ],
+      "total_relevant_oracle": 0,
+      "total_recommended": 3,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.0,
+      "precision_at_5_panel": 0.0,
+      "recall_at_5_panel": 0.0,
+      "ndcg_at_5_panel": 0.0,
+      "diversity": 0.6666666666666666,
+      "fairness": 0.8
+    },
+    {
+      "query_id": "Q-014",
+      "query": {
+        "query_id": "Q-014",
+        "required_skills": [
+          "sql"
+        ],
+        "required_competency_level": 4.6,
+        "min_experience": 5,
+        "role_level": "mid",
+        "availability_required": false
+      },
+      "ranked_ids": [
+        "EMP018",
+        "EMP013",
+        "EMP002",
+        "EMP011",
+        "EMP009"
+      ],
+      "total_relevant_oracle": 8,
+      "total_recommended": 5,
+      "precision_at_3": 1.0,
+      "precision_at_5": 0.8,
+      "recall_at_5": 0.5,
+      "ndcg_at_5": 0.8539316501572937,
+      "precision_at_3_panel": 1.0,
+      "precision_at_5_panel": 0.8,
+      "recall_at_5_panel": 0.4,
+      "ndcg_at_5_panel": 0.8539316501572937,
+      "diversity": 0.6,
+      "fairness": 0.82
+    },
+    {
+      "query_id": "Q-015",
+      "query": {
+        "query_id": "Q-015",
+        "required_skills": [
+          "tableau",
+          "kubernetes",
+          "react",
+          "javascript"
+        ],
+        "required_competency_level": 3.1,
+        "min_experience": 3,
+        "role_level": "principal",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP019"
+      ],
+      "total_relevant_oracle": 0,
+      "total_recommended": 1,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.0,
+      "precision_at_5_panel": 0.0,
+      "recall_at_5_panel": 0.0,
+      "ndcg_at_5_panel": 0.0,
+      "diversity": 1.0,
+      "fairness": 0.6799999999999999
+    },
+    {
+      "query_id": "Q-016",
+      "query": {
+        "query_id": "Q-016",
+        "required_skills": [
+          "tableau",
+          "tensorflow",
+          "aws",
+          "docker"
+        ],
+        "required_competency_level": 3.0,
+        "min_experience": 2,
+        "role_level": "principal",
+        "availability_required": false
+      },
+      "ranked_ids": [
+        "EMP019"
+      ],
+      "total_relevant_oracle": 0,
+      "total_recommended": 1,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.0,
+      "precision_at_5_panel": 0.0,
+      "recall_at_5_panel": 0.0,
+      "ndcg_at_5_panel": 0.0,
+      "diversity": 1.0,
+      "fairness": 0.6799999999999999
+    },
+    {
+      "query_id": "Q-017",
+      "query": {
+        "query_id": "Q-017",
+        "required_skills": [
+          "spring"
+        ],
+        "required_competency_level": 2.6,
+        "min_experience": 1,
+        "role_level": "mid",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP002",
+        "EMP012",
+        "EMP006",
+        "EMP004",
+        "EMP011"
+      ],
+      "total_relevant_oracle": 2,
+      "total_recommended": 5,
+      "precision_at_3": 0.6666666666666666,
+      "precision_at_5": 0.4,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.6666666666666666,
+      "precision_at_5_panel": 0.4,
+      "recall_at_5_panel": 0.5,
+      "ndcg_at_5_panel": 0.6366824387328317,
+      "diversity": 0.8,
+      "fairness": 0.9199999999999999
+    },
+    {
+      "query_id": "Q-018",
+      "query": {
+        "query_id": "Q-018",
+        "required_skills": [
+          "tensorflow",
+          "java",
+          "aws",
+          "spring"
+        ],
+        "required_competency_level": 3.9,
+        "min_experience": 7,
+        "role_level": "principal",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP019"
+      ],
+      "total_relevant_oracle": 0,
+      "total_recommended": 1,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.0,
+      "precision_at_5_panel": 0.0,
+      "recall_at_5_panel": 0.0,
+      "ndcg_at_5_panel": 0.0,
+      "diversity": 1.0,
+      "fairness": 0.6799999999999999
+    },
+    {
+      "query_id": "Q-019",
+      "query": {
+        "query_id": "Q-019",
+        "required_skills": [
+          "kubernetes"
+        ],
+        "required_competency_level": 4.2,
+        "min_experience": 8,
+        "role_level": "senior",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP012",
+        "EMP001",
+        "EMP009",
+        "EMP007",
+        "EMP014"
+      ],
+      "total_relevant_oracle": 0,
+      "total_recommended": 5,
+      "precision_at_3": 0.0,
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 0.0,
+      "precision_at_5_panel": 0.0,
+      "recall_at_5_panel": 0.0,
+      "ndcg_at_5_panel": 0.0,
+      "diversity": 0.6,
+      "fairness": 0.88
+    },
+    {
+      "query_id": "Q-020",
+      "query": {
+        "query_id": "Q-020",
+        "required_skills": [
+          "machine_learning"
+        ],
+        "required_competency_level": 3.5,
+        "min_experience": 7,
+        "role_level": "junior",
+        "availability_required": true
+      },
+      "ranked_ids": [
+        "EMP007",
+        "EMP001",
+        "EMP009",
+        "EMP016",
+        "EMP005"
+      ],
+      "total_relevant_oracle": 6,
+      "total_recommended": 5,
+      "precision_at_3": 1.0,
+      "precision_at_5": 1.0,
+      "recall_at_5": 0.8333333333333334,
+      "ndcg_at_5": 1.0,
+      "precision_at_3_panel": 1.0,
+      "precision_at_5_panel": 1.0,
+      "recall_at_5_panel": 0.625,
+      "ndcg_at_5_panel": 1.0,
+      "diversity": 0.4,
+      "fairness": 0.8
+    }
+  ],
+  "stability_details": [
+    {
+      "avg_kendall_tau": 1.0,
+      "n_perturbations": 10,
+      "perturbation_magnitude": 0.05
+    },
+    {
+      "avg_kendall_tau": 1.0,
+      "n_perturbations": 10,
+      "perturbation_magnitude": 0.05
+    },
+    {
+      "avg_kendall_tau": 1.0,
+      "n_perturbations": 10,
+      "perturbation_magnitude": 0.05
+    },
+    {
+      "avg_kendall_tau": 0.9400000000000001,
+      "n_perturbations": 10,
+      "perturbation_magnitude": 0.05
+    },
+    {
+      "avg_kendall_tau": 1.0,
+      "n_perturbations": 10,
+      "perturbation_magnitude": 0.05
+    }
+  ]
+}
