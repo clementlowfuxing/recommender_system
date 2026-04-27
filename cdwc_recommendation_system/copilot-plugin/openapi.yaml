@@ -1,0 +1,248 @@
+openapi: 3.0.3
+info:
+  title: CDWC Talent Recommendation Engine
+  description: >
+    Similarity-based employee-to-project matching system.
+    Accepts structured project requirements and returns ranked
+    candidates with explainable score breakdowns.
+  version: "2.0.0"
+
+servers:
+  - url: https://{your-app}.azurewebsites.net
+    description: Azure App Service (replace with your deployed URL)
+  - url: http://localhost:8000
+    description: Local development
+
+paths:
+  /recommend:
+    post:
+      operationId: recommendCandidates
+      summary: Get ranked talent recommendations for a project requirement
+      description: >
+        Accepts a project requirement with required skills, competency level,
+        experience, role level, and availability. Returns top-K candidates
+        ranked by composite similarity score with full score breakdowns.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProjectRequirement"
+      responses:
+        "200":
+          description: Ranked list of candidates
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RecommendationResponse"
+        "422":
+          description: Validation error — invalid or missing fields
+
+  /history:
+    get:
+      operationId: getHistory
+      summary: Get audit history of past recommendation requests
+      description: >
+        Returns paginated list of all past recommendation requests,
+        newest first. Each entry includes the original request,
+        full engine response, timestamp, and request_id.
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 50
+            minimum: 1
+            maximum: 200
+          description: Maximum entries to return
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+          description: Pagination offset
+      responses:
+        "200":
+          description: Paginated history entries
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HistoryResponse"
+
+  /history/{request_id}:
+    get:
+      operationId: getHistoryEntry
+      summary: Get a single history entry by request ID
+      parameters:
+        - name: request_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Unique request identifier (e.g. REQ-0001)
+      responses:
+        "200":
+          description: Single history entry
+        "404":
+          description: Request ID not found
+
+  /config/weights:
+    get:
+      operationId: getWeights
+      summary: Get current scoring weights
+      description: Returns the active weight configuration used by the recommendation engine.
+      responses:
+        "200":
+          description: Current weights
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WeightsResponse"
+    put:
+      operationId: updateWeights
+      summary: Update scoring weights
+      description: >
+        Update the scoring weights at runtime. Weights must sum to 1.0.
+        Changes take effect immediately on the next recommendation request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WeightsUpdate"
+      responses:
+        "200":
+          description: Weights updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WeightsResponse"
+        "422":
+          description: Weights do not sum to 1.0
+
+components:
+  schemas:
+    ProjectRequirement:
+      type: object
+      required:
+        - required_skills
+        - required_competency_level
+        - min_experience
+        - role_level
+      properties:
+        required_skills:
+          type: array
+          items:
+            type: string
+          description: Skills needed (e.g. python, machine_learning, sql)
+        required_competency_level:
+          type: number
+          minimum: 0
+          maximum: 5
+          description: Minimum competency level (0-5 scale)
+        min_experience:
+          type: integer
+          minimum: 0
+          description: Minimum years of experience
+        role_level:
+          type: string
+          enum: [junior, mid, senior, lead, principal]
+          description: Required role level
+        availability_required:
+          type: boolean
+          default: true
+          description: Whether candidate must be currently available
+
+    RecommendationResponse:
+      type: object
+      properties:
+        request_id:
+          type: string
+        total_candidates_evaluated:
+          type: integer
+        candidates_after_filtering:
+          type: integer
+        top_k:
+          type: integer
+        recommendations:
+          type: array
+          items:
+            $ref: "#/components/schemas/Candidate"
+
+    Candidate:
+      type: object
+      properties:
+        employee_id:
+          type: string
+        name:
+          type: string
+        department:
+          type: string
+        role_level:
+          type: string
+        skills:
+          type: array
+          items:
+            type: string
+        competency_score:
+          type: number
+        years_experience:
+          type: integer
+        availability:
+          type: boolean
+        score_breakdown:
+          type: object
+          properties:
+            skill_overlap:
+              type: number
+            competency:
+              type: number
+            experience:
+              type: number
+            role_match:
+              type: number
+        total_score:
+          type: number
+
+    WeightsUpdate:
+      type: object
+      properties:
+        skill_overlap:
+          type: number
+          minimum: 0
+          maximum: 1
+        competency:
+          type: number
+          minimum: 0
+          maximum: 1
+        experience:
+          type: number
+          minimum: 0
+          maximum: 1
+        role_match:
+          type: number
+          minimum: 0
+          maximum: 1
+
+    WeightsResponse:
+      type: object
+      properties:
+        weights:
+          type: object
+        message:
+          type: string
+
+    HistoryResponse:
+      type: object
+      properties:
+        total:
+          type: integer
+        limit:
+          type: integer
+        offset:
+          type: integer
+        entries:
+          type: array
+          items:
+            type: object

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+  "schema_version": "v2.2",
+  "name_for_human": "CDWC Talent Search",
+  "name_for_model": "cdwc_talent_search",
+  "description_for_human": "Search and rank internal talent for project staffing using the CDWC recommendation engine.",
+  "description_for_model": "This plugin searches the internal talent pool and returns ranked candidates for project requirements. Use it when the user asks to find employees, match talent to projects, search for people with specific skills, or get staffing recommendations. The plugin returns candidates ranked by a deterministic similarity engine with explainable score breakdowns. It can also retrieve past recommendation history and view or update scoring weights.",
+  "logo_url": "https://{your-app}.azurewebsites.net/static/logo.png",
+  "contact_email": "[email]",
+  "legal_info_url": "https://{your-app}.azurewebsites.net/legal",
+  "privacy_url": "https://{your-app}.azurewebsites.net/privacy",
+  "functions": [
+    {
+      "name": "recommendCandidates",
+      "description": "Find and rank the best candidates for a project requirement. Call this when the user wants to find talent, match people to a project, or search for employees with specific skills and experience.",
+      "parameters": {
+        "type": "object",
+        "required": ["required_skills", "required_competency_level", "min_experience", "role_level"],
+        "properties": {
+          "required_skills": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "List of required skills. Map common terms: ML=machine_learning, JS=javascript, K8s=kubernetes, DB=sql"
+          },
+          "required_competency_level": {
+            "type": "number",
+            "description": "Minimum competency on 0-5 scale. Map: beginner=1.5, intermediate=3.0, advanced=4.0, expert=4.5. Default 3.0"
+          },
+          "min_experience": {
+            "type": "integer",
+            "description": "Minimum years of experience. Default 0"
+          },
+          "role_level": {
+            "type": "string",
+            "enum": ["junior", "mid", "senior", "lead", "principal"],
+            "description": "Required role level. Default mid"
+          },
+          "availability_required": {
+            "type": "boolean",
+            "description": "Whether candidate must be available now. Default true"
+          }
+        }
+      }
+    },
+    {
+      "name": "getHistory",
+      "description": "Get the history of past talent recommendation requests. Call this when the user asks about previous searches or past recommendations."
+    },
+    {
+      "name": "getHistoryEntry",
+      "description": "Get details of a specific past recommendation by its request ID."
+    },
+    {
+      "name": "getWeights",
+      "description": "Show the current scoring weights used to rank candidates."
+    },
+    {
+      "name": "updateWeights",
+      "description": "Update the scoring weights. Only call this when the user explicitly asks to change weights."
+    }
+  ],
+  "runtimes": [
+    {
+      "type": "OpenApi",
+      "auth": {
+        "type": "OAuthPluginVault",
+        "reference_id": "cdwc-oauth"
+      },
+      "spec": {
+        "url": "openapi.yaml"
+      }
+    }
+  ]
+}
