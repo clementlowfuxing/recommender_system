@@ -1,0 +1,40 @@
+[
+  {
+    "dummy_id": 23267,
+    "employee_name": "Mwhzmmzd Hzxrwm Hzrwn",
+    "skill_group": "018 Health, Safety & Environment",
+    "job_grade": "P3",
+    "salary_grade": "P4",
+    "year_in_sg": 6,
+    "sma_completion_status": "Completed All",
+    "overall_cbs_pct": 0.25,
+    "leadership_cbs_pct": 0.5,
+    "superior_name": "Mohd Hafizan  Mohd Yusof"
+  },
+  {
+    "dummy_id": 23268,
+    "employee_name": "Mztxvs Jwk",
+    "skill_group": "018 Health, Safety & Environment",
+    "job_grade": "P6",
+    "salary_grade": "P5",
+    "year_in_sg": 3.6,
+    "sma_completion_status": "Awaiting Approval",
+    "overall_cbs_pct": 0.5493,
+    "technical_cbs_pct": 0.6716,
+    "leadership_cbs_pct": 0.4271,
+    "superior_name": "Miza Ahmad Zaidi"
+  },
+  {
+    "dummy_id": 23269,
+    "employee_name": "Nvr Hzfxzzh Svpzzt",
+    "skill_group": "018 Health, Safety & Environment",
+    "job_grade": "P6",
+    "salary_grade": "P6",
+    "year_in_sg": 1.9,
+    "sma_completion_status": "Completed All",
+    "overall_cbs_pct": 0.9844,
+    "technical_cbs_pct": 1,
+    "leadership_cbs_pct": 0.9688,
+    "superior_name": "Amrik Singh Arbajan Singh"
+  }
+]
