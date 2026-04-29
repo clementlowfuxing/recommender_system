@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CDWC Talent Recommendation Engine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🔍 CDWC Talent Recommendation Engine</h1>
+    <p class="subtitle">Find the right talent for your project</p>
+  </header>
+
+  <main>
+    <!-- Mode toggle -->
+    <div class="mode-toggle" role="tablist" aria-label="Search mode">
+      <button role="tab" id="tab-form" class="tab active" aria-selected="true" aria-controls="panel-form" data-mode="form">Form Search</button>
+      <button role="tab" id="tab-chat" class="tab" aria-selected="false" aria-controls="panel-chat" data-mode="chat">Chat Search</button>
+    </div>
+
+    <!-- Form-based search -->
+    <section id="panel-form" role="tabpanel" aria-labelledby="tab-form" class="panel">
+      <form id="search-form" novalidate>
+        <div class="field">
+          <label for="skills">Skills <span class="required">*</span></label>
+          <input type="text" id="skills" placeholder="e.g. python, machine_learning, sql" required />
+          <small>Comma-separated skill names</small>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="competency">Min Competency Level</label>
+            <div class="range-wrap">
+              <input type="range" id="competency" min="0" max="5" step="0.5" value="3" />
+              <output id="competency-val">3.0</output>
+            </div>
+          </div>
+          <div class="field">
+            <label for="experience">Min Experience (years)</label>
+            <input type="number" id="experience" min="0" max="40" value="0" />
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="role-level">Role Level</label>
+            <select id="role-level"></select>
+          </div>
+          <div class="field checkbox-field">
+            <label>
+              <input type="checkbox" id="availability" checked />
+              Available only
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" id="btn-search">🔍 Search Talent</button>
+      </form>
+    </section>
+
+    <!-- Chat-based search -->
+    <section id="panel-chat" role="tabpanel" aria-labelledby="tab-chat" class="panel hidden">
+      <div id="chat-messages" class="chat-messages" aria-live="polite" aria-label="Chat messages"></div>
+      <form id="chat-form" class="chat-input-row">
+        <label for="chat-input" class="sr-only">Describe the talent you need</label>
+        <input type="text" id="chat-input" placeholder="Describe the talent you need..." autocomplete="off" required />
+        <button type="submit" id="btn-send" aria-label="Send message">Send</button>
+      </form>
+    </section>
+
+    <!-- Results area (shared) -->
+    <section id="results" class="results" aria-live="polite" aria-label="Search results"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

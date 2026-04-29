@@ -7,10 +7,12 @@ Similarity-based employee-to-project matching system. Fully local, deterministic
 ```bash
 cd cdwc_recommendation_system
 pip install -r requirements.txt
-python app/main.py
+uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
 Server starts at `http://localhost:8000`. Interactive docs at `http://localhost:8000/docs`.
+
+The `--reload` flag enables auto-restart on code changes (useful during development). Drop it in production.
 
 ## Test It
 
@@ -50,6 +52,10 @@ cdwc_recommendation_system/
 │   ├── orchestrator.py    # Parse → validate → recommend → format
 │   ├── parser.py          # NL extraction (mock + OpenAI)
 │   ├── formatter.py       # Engine output → readable text
+├── frontend/
+│   ├── index.html         # Vanilla JS web UI
+│   ├── app.js             # API calls + DOM rendering
+│   ├── style.css          # Styling
 ├── data/
 │   └── employees.json     # 20-employee synthetic dataset
 ├── scripts/
@@ -82,6 +88,19 @@ streamlit run chat/streamlit_app.py
 ```
 
 Opens a browser-based chat at `http://localhost:8501`.
+
+### Vanilla JS Web UI
+
+With the server running (`uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload`), open:
+
+```
+http://localhost:8000/ui
+```
+
+This is a lightweight frontend served directly by FastAPI — no extra dependencies. It has two modes:
+
+- **Form Search** — fill in skills, competency, experience, and role level, then hit Search. Calls `/recommend` directly.
+- **Chat Search** — type a natural language query (same as Streamlit/CLI). Calls `/chat` which wraps the orchestrator pipeline.
 
 ### How the Chat Layer Works
 

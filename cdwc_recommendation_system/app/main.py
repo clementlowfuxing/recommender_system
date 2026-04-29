@@ -10,16 +10,35 @@ if _project_root not in sys.path:
     sys.path.insert(0, _project_root)
 
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from app.recommender import recommend
 from app import config
 from app.history import record, get_all, get_by_id
+from chat.orchestrator import Orchestrator
 
 app = FastAPI(
     title="CDWC Talent Recommendation Engine",
     description="Similarity-based employee-to-project matching system.",
     version="2.0.0",
 )
+
+# CORS — allow the vanilla JS frontend to call the API
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Serve the vanilla JS frontend at /ui
+_frontend_dir = Path(__file__).resolve().parent.parent / "frontend"
+if _frontend_dir.exists():
+    app.mount("/ui", StaticFiles(directory=str(_frontend_dir), html=True), name="frontend")
+
+# Shared orchestrator instance for the /chat endpoint
+_orchestrator = Orchestrator()
 
 
 # ── Request / Response Models ─────────────────────────────────────────
@@ -140,8 +159,30 @@ def put_weights(body: WeightsUpdate):
     )
 
 
+# ── POST /chat ─────────────────────────────────────────────────────────
+
+class ChatRequest(BaseModel):
+    message: str = Field(..., min_length=1, examples=["I need a senior Python developer with ML experience, 5+ years"])
+
+
+@app.post("/chat")
+def post_chat(req: ChatRequest):
+    """Accept a natural-language message and return a structured recommendation
+    response, using the same orchestrator pipeline as the Streamlit UI."""
+    reply = _orchestrator.handle(req.message)
+    return {"reply": reply}
+
+
+# ── GET /config/role-levels ───────────────────────────────────────────
+
+@app.get("/config/role-levels")
+def get_role_levels():
+    """Return the ordered list of role levels for UI dropdowns."""
+    return {"role_levels": config.ROLE_LEVELS}
+
+
 # ── Entrypoint ────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("app.main:app", host="127.0.0.1", port=8000, reload=True)
