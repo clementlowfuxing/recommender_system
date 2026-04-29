@@ -129,5 +129,266 @@
         }
       ]
     }
+  },
+  {
+    "request_id": "REQ-0002",
+    "timestamp": "2026-04-29T02:17:02.543283+00:00",
+    "request": {
+      "required_skills": [
+        "python"
+      ],
+      "required_competency_level": 1.5,
+      "min_experience": 0,
+      "role_level": "senior",
+      "availability_required": true
+    },
+    "response": {
+      "total_candidates_evaluated": 20,
+      "candidates_after_filtering": 8,
+      "top_k": 5,
+      "recommendations": [
+        {
+          "employee_id": "EMP007",
+          "name": "Grace Okafor",
+          "department": "Engineering",
+          "role_level": "senior",
+          "skills": [
+            "java",
+            "python",
+            "sql",
+            "machine_learning"
+          ],
+          "competency_score": 4.2,
+          "years_experience": 7,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.45999999999999996,
+            "experience": 1.0,
+            "role_match": 1.0
+          },
+          "total_score": 0.865
+        },
+        {
+          "employee_id": "EMP001",
+          "name": "Alice Chen",
+          "department": "Engineering",
+          "role_level": "senior",
+          "skills": [
+            "python",
+            "machine_learning",
+            "sql",
+            "docker"
+          ],
+          "competency_score": 4.5,
+          "years_experience": 8,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.4,
+            "experience": 1.0,
+            "role_match": 1.0
+          },
+          "total_score": 0.85
+        },
+        {
+          "employee_id": "EMP009",
+          "name": "Irene Novak",
+          "department": "Data Science",
+          "role_level": "senior",
+          "skills": [
+            "python",
+            "machine_learning",
+            "sql",
+            "statistics"
+          ],
+          "competency_score": 4.6,
+          "years_experience": 9,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.3800000000000001,
+            "experience": 1.0,
+            "role_match": 1.0
+          },
+          "total_score": 0.845
+        },
+        {
+          "employee_id": "EMP016",
+          "name": "Paul Andersen",
+          "department": "Engineering",
+          "role_level": "lead",
+          "skills": [
+            "python",
+            "machine_learning",
+            "docker",
+            "aws"
+          ],
+          "competency_score": 4.7,
+          "years_experience": 11,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.36,
+            "experience": 1.0,
+            "role_match": 0.5
+          },
+          "total_score": 0.74
+        },
+        {
+          "employee_id": "EMP005",
+          "name": "Eva Patel",
+          "department": "Data Science",
+          "role_level": "lead",
+          "skills": [
+            "python",
+            "machine_learning",
+            "tensorflow",
+            "statistics"
+          ],
+          "competency_score": 4.8,
+          "years_experience": 10,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.3400000000000001,
+            "experience": 1.0,
+            "role_match": 0.5
+          },
+          "total_score": 0.735
+        }
+      ],
+      "request_id": "REQ-0002"
+    }
+  },
+  {
+    "request_id": "REQ-0003",
+    "timestamp": "2026-04-29T02:17:10.382401+00:00",
+    "request": {
+      "required_skills": [
+        "python"
+      ],
+      "required_competency_level": 1.5,
+      "min_experience": 2,
+      "role_level": "senior",
+      "availability_required": true
+    },
+    "response": {
+      "total_candidates_evaluated": 20,
+      "candidates_after_filtering": 8,
+      "top_k": 5,
+      "recommendations": [
+        {
+          "employee_id": "EMP007",
+          "name": "Grace Okafor",
+          "department": "Engineering",
+          "role_level": "senior",
+          "skills": [
+            "java",
+            "python",
+            "sql",
+            "machine_learning"
+          ],
+          "competency_score": 4.2,
+          "years_experience": 7,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.45999999999999996,
+            "experience": 1.0,
+            "role_match": 1.0
+          },
+          "total_score": 0.865
+        },
+        {
+          "employee_id": "EMP001",
+          "name": "Alice Chen",
+          "department": "Engineering",
+          "role_level": "senior",
+          "skills": [
+            "python",
+            "machine_learning",
+            "sql",
+            "docker"
+          ],
+          "competency_score": 4.5,
+          "years_experience": 8,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.4,
+            "experience": 1.0,
+            "role_match": 1.0
+          },
+          "total_score": 0.85
+        },
+        {
+          "employee_id": "EMP009",
+          "name": "Irene Novak",
+          "department": "Data Science",
+          "role_level": "senior",
+          "skills": [
+            "python",
+            "machine_learning",
+            "sql",
+            "statistics"
+          ],
+          "competency_score": 4.6,
+          "years_experience": 9,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.3800000000000001,
+            "experience": 1.0,
+            "role_match": 1.0
+          },
+          "total_score": 0.845
+        },
+        {
+          "employee_id": "EMP016",
+          "name": "Paul Andersen",
+          "department": "Engineering",
+          "role_level": "lead",
+          "skills": [
+            "python",
+            "machine_learning",
+            "docker",
+            "aws"
+          ],
+          "competency_score": 4.7,
+          "years_experience": 11,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.36,
+            "experience": 1.0,
+            "role_match": 0.5
+          },
+          "total_score": 0.74
+        },
+        {
+          "employee_id": "EMP005",
+          "name": "Eva Patel",
+          "department": "Data Science",
+          "role_level": "lead",
+          "skills": [
+            "python",
+            "machine_learning",
+            "tensorflow",
+            "statistics"
+          ],
+          "competency_score": 4.8,
+          "years_experience": 10,
+          "availability": true,
+          "score_breakdown": {
+            "skill_overlap": 1.0,
+            "competency": 0.3400000000000001,
+            "experience": 1.0,
+            "role_match": 0.5
+          },
+          "total_score": 0.735
+        }
+      ]
+    }
   }
 ]
