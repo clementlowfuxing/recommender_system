@@ -1,5 +1,5 @@
 """
-Generate the CDWC Talent Diagnostic Engine — Redesign Proposal deck.
+Generate the CDWC Diagnostic Engine — Redesign Proposal deck.
 Output: presentation_ppt/CDWC_Redesign_Proposal.pptx
 """
 
@@ -135,7 +135,7 @@ slide = prs.slides.add_slide(prs.slide_layouts[6])
 add_bg(slide, DARK_BLUE)
 
 add_text(slide, Inches(1), Inches(1.6), Inches(11), Inches(1.2),
-         "CDWC Talent Diagnostic Engine",
+         "CDWC Diagnostic Engine",
          size=42, bold=True, color=WHITE, align=PP_ALIGN.CENTER)
 add_text(slide, Inches(1), Inches(2.9), Inches(11), Inches(0.8),
          "Redesign Proposal",
@@ -204,7 +204,7 @@ add_bullets(slide, Inches(0.9), Inches(2.4), Inches(5.4), Inches(4.2), old_items
 # NEW
 add_shape(slide, Inches(6.9), Inches(1.7), Inches(6), Inches(5), PALE_GREEN, GREEN)
 add_text(slide, Inches(7.2), Inches(1.85), Inches(5.4), Inches(0.5),
-         "NEW: Talent Diagnostic Engine", size=18, bold=True, color=GREEN)
+         "NEW: CDWC Diagnostic Engine", size=18, bold=True, color=GREEN)
 new_items = [
     "• Input: team scope (business / opu / division)",
     "• Output: team health + individuals + gaps",
